@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\HalfKeyboardTipTap.cs" />
      <Compile Include="Assets\TheTrainJamTrain.cs" />
      <Compile Include="Assets\TipTapDisplay.cs" />
      <Compile Include="Assets\TipTapSpeeder.cs" />
