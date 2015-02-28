@@ -16,6 +16,8 @@ public class TipTapSpeeder : MonoBehaviour {
     public float drag;
     public float minimumTapFreq;
     public float maximumTapFreq;
+    public float goodTipTapBonus;
+    public float badTipTapMalus;
 
 
     float _speed;
@@ -62,14 +64,14 @@ public class TipTapSpeeder : MonoBehaviour {
     {
         if (!tipped)
         {
-            if (current_phase.isTip())
+            if (current_phase.canTip())
             {
-                speed++;
+                speed+=goodTipTapBonus;
                 GetComponent<GoodTipTapDisplay>().goodTip();
             }
             else
             {
-                speed--;
+                speed-=badTipTapMalus;
                 GetComponent<BadTipTapDisplay>().badTip();
             }
         }
@@ -79,14 +81,14 @@ public class TipTapSpeeder : MonoBehaviour {
     {
         if (!tapped)
         {
-            if (current_phase.isTap())
+            if (current_phase.canTap())
             {
-                speed++;
+                speed+=goodTipTapBonus;
                 GetComponent<GoodTipTapDisplay>().goodTap();
             }
             else
             {
-                speed--;
+                speed-=badTipTapMalus;
                 GetComponent<BadTipTapDisplay>().badTap();
             }
         }

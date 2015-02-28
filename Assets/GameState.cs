@@ -31,6 +31,7 @@ public class GameState : MonoBehaviour {
                 startPrompt.SetActive(false);
                 promptAt = Time.time + restartTime;
                 GetComponent<AudioSource>().Play();
+                GetComponent<BurstParticles>().burst();
                 GameOver();
             }
         }
