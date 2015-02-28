@@ -3,30 +3,25 @@ using System.Collections;
 
 public class GoodTipTapDisplay : MonoBehaviour {
 
-    public int count;
-
-    public GameObject onTip;
-    public GameObject onTap;
 
     public Transform tipTarget;
     public Transform tapTarget;
 
+    void Update()
+    {
+        tipTarget.localScale = Vector3.Lerp(tipTarget.localScale,Vector3.one,0.1f);
+        tapTarget.localScale = Vector3.Lerp(tapTarget.localScale, Vector3.one, 0.1f);
+    }
+
+
     public void goodTip()
     {
-        for (int i = 0; i < count; i++)
-        {
-            GameObject go = Instantiate(onTip) as GameObject;
-            go.transform.position = tipTarget.transform.position;
-        }
+        tipTarget.localScale = Vector3.one * 0.5f;
     }
 
     public void goodTap()
     {
-        for (int i = 0; i < count; i++)
-        {
-            GameObject go = Instantiate(onTap) as GameObject;
-            go.transform.position = tapTarget.transform.position;
-        }
+        tapTarget.localScale = Vector3.one * 0.5f;
     }
 
 }

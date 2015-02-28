@@ -6,6 +6,7 @@ using System.Collections.Generic;
 [RequireComponent(typeof(TheTrainJamTrain))]
 public class GameState : MonoBehaviour {
 
+
     public TipTapSpeeder adriel;
     public GameObject startPrompt;
     public List<GameObject> turnTheseOffAtGameOver;
@@ -29,6 +30,7 @@ public class GameState : MonoBehaviour {
                 gameon = false;
                 startPrompt.SetActive(false);
                 promptAt = Time.time + restartTime;
+                GetComponent<AudioSource>().Play();
                 GameOver();
             }
         }

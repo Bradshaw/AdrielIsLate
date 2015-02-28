@@ -62,13 +62,16 @@ public class TipTapSpeeder : MonoBehaviour {
     {
         if (!tipped)
         {
-            if (current_phase.canTip())
+            if (current_phase.isTip())
             {
                 speed++;
                 GetComponent<GoodTipTapDisplay>().goodTip();
             }
             else
+            {
                 speed--;
+                GetComponent<BadTipTapDisplay>().badTip();
+            }
         }
         tipped = true;
     }
@@ -76,13 +79,16 @@ public class TipTapSpeeder : MonoBehaviour {
     {
         if (!tapped)
         {
-            if (current_phase.canTap())
+            if (current_phase.isTap())
             {
                 speed++;
                 GetComponent<GoodTipTapDisplay>().goodTap();
             }
             else
+            {
                 speed--;
+                GetComponent<BadTipTapDisplay>().badTap();
+            }
         }
         tapped = true;
     }
