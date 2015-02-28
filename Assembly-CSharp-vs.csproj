@@ -46,10 +46,25 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\HalfKeyboardTipTap.cs" />
-     <Compile Include="Assets\TheTrainJamTrain.cs" />
-     <Compile Include="Assets\TipTapDisplay.cs" />
-     <Compile Include="Assets\TipTapSpeeder.cs" />
+     <Compile Include="Assets\AutoPickSprite.cs" />
+     <Compile Include="Assets\GameState.cs" />
+     <Compile Include="Assets\GoodTipTapDisplay.cs" />
+     <Compile Include="Assets\MoveOutAndThenConstant.cs" />
+     <Compile Include="Assets\Scripts\BumpyWumpy.cs" />
+     <Compile Include="Assets\Scripts\DeleteAtRange.cs" />
+     <Compile Include="Assets\Scripts\HalfKeyboardTipTap.cs" />
+     <Compile Include="Assets\Scripts\JammerPool.cs" />
+     <Compile Include="Assets\Scripts\LoadRandomJammer.cs" />
+     <Compile Include="Assets\Scripts\MoveConstant.cs" />
+     <Compile Include="Assets\Scripts\SpawnAhead.cs" />
+     <Compile Include="Assets\Scripts\SpawnThings.cs" />
+     <Compile Include="Assets\Scripts\SpinSpinSpin.cs" />
+     <Compile Include="Assets\Scripts\TheTrainJamTrain.cs" />
+     <Compile Include="Assets\Scripts\TiledBackground.cs" />
+     <Compile Include="Assets\Scripts\TipTapDisplay.cs" />
+     <Compile Include="Assets\Scripts\TipTapSpeeder.cs" />
+     <Compile Include="Assets\Scripts\WaveyWavey.cs" />
+     <Compile Include="Assets\SparkWhenFast.cs" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
