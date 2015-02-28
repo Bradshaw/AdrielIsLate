@@ -14,6 +14,8 @@ public class BadTipTapDisplay : MonoBehaviour {
     Transform tipTarget;
     Transform tapTarget;
 
+    public AudioSource badTipTapSound;
+
     void Start()
     {
         tipSprite = tip.GetComponent<SpriteRenderer>().sprite;
@@ -40,11 +42,13 @@ public class BadTipTapDisplay : MonoBehaviour {
     {
         tipTarget.localScale = Vector3.one * 1.5f;
         tip.GetComponent<SpriteRenderer>().sprite = badSprite;
+        badTipTapSound.Play();
     }
 
     public void badTap()
     {
         tapTarget.localScale = Vector3.one * 1.5f;
         tap.GetComponent<SpriteRenderer>().sprite = badSprite;
+        badTipTapSound.Play();
     }
 }

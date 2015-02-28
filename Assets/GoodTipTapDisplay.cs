@@ -9,6 +9,9 @@ public class GoodTipTapDisplay : MonoBehaviour {
     public Transform tipTarget;
     public Transform tapTarget;
 
+    public AudioSource tipSound;
+    public AudioSource tapSound;
+
     void Update()
     {
         tipTarget.localScale = Vector3.Lerp(tipTarget.localScale,Vector3.one,0.1f);
@@ -24,6 +27,7 @@ public class GoodTipTapDisplay : MonoBehaviour {
             GameObject go = Instantiate(sparkle) as GameObject;
             go.transform.position = tipTarget.position;
         }
+        tipSound.Play();
     }
 
     public void goodTap()
@@ -34,6 +38,7 @@ public class GoodTipTapDisplay : MonoBehaviour {
             GameObject go = Instantiate(sparkle) as GameObject;
             go.transform.position = tapTarget.position;
         }
+        tapSound.Play();
     }
 
 }
