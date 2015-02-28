@@ -3,8 +3,10 @@ using System.Collections;
 
 public enum TipTapPhase
 {
-    TIP,
-    TAP
+    TIP = 0,
+    TIPTAP,
+    TAP,
+    TAPTIP,
 }
 
 public class TipTapSpeeder : MonoBehaviour {
@@ -23,13 +25,13 @@ public class TipTapSpeeder : MonoBehaviour {
         set { _speed = Mathf.Clamp(value, minumumSpeed, maximumSpeed); }
     }
 
-    float phase = 0;
+    public float phase = 0;
     TipTapPhase prev_phase;
     public TipTapPhase current_phase {
         get
         {
-            var next_phase = (Mathf.FloorToInt(phase) % 2 == 0 ? TipTapPhase.TIP : TipTapPhase.TAP);
-            if (next_phase != prev_phase)
+            TipTapPhase next_phase = (TipTapPhase) (Mathf.FloorToInt(phase) % 4);
+            if (next_phase.isTip() != prev_phase.isTip())
                 switchPhase(next_phase);
 
             prev_phase = next_phase;
@@ -50,8 +52,8 @@ public class TipTapSpeeder : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
         float tapSpeed = ((speed - minumumSpeed) / (maximumSpeed - minumumSpeed)) * (maximumTapFreq - minimumTapFreq) + minimumTapFreq;
-        phase += Time.fixedDeltaTime * tapSpeed;
-        if (phase > 2) phase -= 2;
+        phase += Time.fixedDeltaTime * tapSpeed * 2;
+        if (phase > 4) phase -= 4;
 
         speed = speed - speed * drag * Time.fixedDeltaTime;
 	}
@@ -60,7 +62,7 @@ public class TipTapSpeeder : MonoBehaviour {
     {
         if (!tipped)
         {
-            if (current_phase.isTip())
+            if (current_phase.canTip())
             {
                 speed++;
                 GetComponent<GoodTipTapDisplay>().goodTip();
@@ -74,7 +76,7 @@ public class TipTapSpeeder : MonoBehaviour {
     {
         if (!tapped)
         {
-            if (current_phase.isTap())
+            if (current_phase.canTap())
             {
                 speed++;
                 GetComponent<GoodTipTapDisplay>().goodTap();
@@ -99,11 +101,19 @@ public static class TipTapPhaseExtension
 {
     public static bool isTip(this TipTapPhase ttp)
     {
-        return ttp == TipTapPhase.TIP;
+        return ttp == TipTapPhase.TIP || ttp == TipTapPhase.TIPTAP;
     }
     public static bool isTap(this TipTapPhase ttp)
     {
-        return ttp == TipTapPhase.TAP;
+        return ttp == TipTapPhase.TAP || ttp == TipTapPhase.TAPTIP;
+    }
+    public static bool canTip(this TipTapPhase ttp)
+    {
+        return ttp != TipTapPhase.TAP;
+    }
+    public static bool canTap(this TipTapPhase ttp)
+    {
+        return ttp != TipTapPhase.TIP;
     }
     public static string toString(this TipTapPhase ttp)
     {

@@ -7,19 +7,17 @@ using System.Collections.Generic;
 public class GameState : MonoBehaviour {
 
     public TipTapSpeeder adriel;
+    public GameObject startPrompt;
     public List<GameObject> turnTheseOffAtGameOver;
     public List<GameObject> turnTheseOnAtGameOver;
-    public List<GameObject> turnTheseOffAtGameStart;
-    public List<GameObject> turnTheseOnAtGameStart;
-    public float restartTime = 10;
+    public float restartTime = 1;
 
     bool gameon = true;
-    float restartAt = 0;
+    float promptAt = 0;
 
 	// Use this for initialization
 	void Start () {
         gameon = true;
-        GameStart();
 	}
 	
 	// Update is called once per frame
@@ -29,20 +27,15 @@ public class GameState : MonoBehaviour {
             if (GetComponent<TheTrainJamTrain>().current_position < 0)
             {
                 gameon = false;
-                restartAt = Time.time + restartTime;
+                startPrompt.SetActive(false);
+                promptAt = Time.time + restartTime;
                 GameOver();
             }
         }
         else
         {
-            if (Time.time > restartAt)
-            {
-                var train = GetComponent<TheTrainJamTrain>();
-                train.current_position = 5;
-                train.current_speed = 1;
-                gameon = true;
-                GameStart();
-            }
+            if (Time.time > promptAt)
+                startPrompt.SetActive(true);
         }
 	}
 
@@ -53,18 +46,6 @@ public class GameState : MonoBehaviour {
             go.SetActive(false);
         }
         foreach (GameObject go in turnTheseOnAtGameOver)
-        {
-            go.SetActive(true);
-        }
-    }
-    public void GameStart()
-    {
-        adriel.speed = 0;
-        foreach (GameObject go in turnTheseOffAtGameStart)
-        {
-            go.SetActive(false);
-        }
-        foreach (GameObject go in turnTheseOnAtGameStart)
         {
             go.SetActive(true);
         }

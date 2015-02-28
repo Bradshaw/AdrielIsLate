@@ -1,13 +1,7 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-Project("{B2A9EDC1-5CA9-A121-0A2D-CD1998D7586C}") = "TheTrainJamTrainGame", "Assembly-CSharp-firstpass.csproj", "{1C29A0C6-E993-DAA8-227F-59D5180A08F9}"
-EndProject
 Project("{B2A9EDC1-5CA9-A121-0A2D-CD1998D7586C}") = "TheTrainJamTrainGame", "Assembly-CSharp.csproj", "{4E84F757-34F2-D720-DDC7-4D6834B9858D}"
-EndProject
-Project("{B2A9EDC1-5CA9-A121-0A2D-CD1998D7586C}") = "TheTrainJamTrainGame", "Assembly-UnityScript-firstpass.unityproj", "{021801D0-78BB-2686-020D-657301E00169}"
-EndProject
-Project("{B2A9EDC1-5CA9-A121-0A2D-CD1998D7586C}") = "TheTrainJamTrainGame", "Assembly-UnityScript-Editor.unityproj", "{5029D577-718C-ACA1-DA50-3B36446225A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,27 +9,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1C29A0C6-E993-DAA8-227F-59D5180A08F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1C29A0C6-E993-DAA8-227F-59D5180A08F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1C29A0C6-E993-DAA8-227F-59D5180A08F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1C29A0C6-E993-DAA8-227F-59D5180A08F9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4E84F757-34F2-D720-DDC7-4D6834B9858D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4E84F757-34F2-D720-DDC7-4D6834B9858D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E84F757-34F2-D720-DDC7-4D6834B9858D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E84F757-34F2-D720-DDC7-4D6834B9858D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{021801D0-78BB-2686-020D-657301E00169}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{021801D0-78BB-2686-020D-657301E00169}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{021801D0-78BB-2686-020D-657301E00169}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{021801D0-78BB-2686-020D-657301E00169}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5029D577-718C-ACA1-DA50-3B36446225A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5029D577-718C-ACA1-DA50-3B36446225A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5029D577-718C-ACA1-DA50-3B36446225A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5029D577-718C-ACA1-DA50-3B36446225A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																	GlobalSection(MonoDevelopProperties) = preSolution
+																																																								GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
