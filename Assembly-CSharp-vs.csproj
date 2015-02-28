@@ -68,6 +68,7 @@
      <Compile Include="Assets\Scripts\TipTapSpeeder.cs" />
      <Compile Include="Assets\Scripts\WaveyWavey.cs" />
      <Compile Include="Assets\SparkWhenFast.cs" />
+     <Compile Include="Assets\TapDetector.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.3/UnityEngine.UI.dll</HintPath>
  </Reference>
